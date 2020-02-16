@@ -14,15 +14,28 @@ let i=0;
             //playSound(color);
         i++;
     }
-
+    $("h3").text("**** Game Pattern **** "+gamePattern);
+    console.log("Random colors "+gamePattern);
+    window.gamePattern = gamePattern;
     // UI Elements DOM Eventlistener! 
    
+    function checkAnswer(sequence,color) {
+        console.log("clicked "+sequence + " "+ color);
+
+        if(sequence == gamePattern.indexOf("red")) {
+            console.log("RED");
+        } 
+    }
+   
+
+
     buttonColours.forEach(color=>{
         $("#"+color).click(function(){
             userClickedPattern.push(color);
             playSound(color);
             animateColor(color);
-            console.log(userClickedPattern);
+            console.log("UserClickedPattern >>>"+userClickedPattern);
+            checkAnswer(userClickedPattern.indexOf(color),color);
         });
     });
 
