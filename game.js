@@ -2,10 +2,10 @@
 let buttonColours = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 let userClickedPattern = [];
-
-    let i=0;
+let level = 0;
+let i=0;
     
-    while (i < $(".btn").length) { // using jQuery $() function to find all buttons "btn" hence length is 4 total 
+    while (i < buttonColours.length) { // $(".btn") using jQuery $() function to find all buttons "btn" hence length is 4 total 
         
         
         let color = choseRandomColor(nextSquence());
@@ -15,7 +15,7 @@ let userClickedPattern = [];
         i++;
     }
 
-    // FRONT END DOM Eventlistener! 
+    // UI Elements DOM Eventlistener! 
    
     buttonColours.forEach(color=>{
         $("#"+color).click(function(){
@@ -26,9 +26,14 @@ let userClickedPattern = [];
         });
     });
 
-    //console.log("GAME PATTERN ARRAY "+gamePattern);
+    document.addEventListener("keydown",function(){
+        
+        $("h1").text("Level "+level);
+        level++;
+        let randomNumber = nextSquence();
+        
+    });
 
-    
     
 
 function nextSquence() {    

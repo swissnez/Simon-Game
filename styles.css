@@ -1,6 +1,8 @@
 body {
-  text-align: center;
-  background-color: #011F3F;
+ text-align: center;
+ 
+ background: linear-gradient(141deg, rgba(26,171,205,0.8) 58%, rgba(30,207,33,1) 90%),url(https://arcadestickers.co.uk/wp-content/uploads/2018/11/donkey-kong-game-sticker.jpg);
+ background-size: cover; 
 }
 
 #level-title {
@@ -22,7 +24,7 @@ body {
   display: inline-block;
   height: 200px;
   width: 200px;
-  border: 10px solid black;
+  border: 10px solid #0000006e;
   border-radius: 20%;
 }
 
@@ -50,6 +52,7 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+  transform: scale3d(1.5, 1.5, 1.1);
 }
 
 
